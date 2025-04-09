@@ -106,8 +106,8 @@ int main()
     // Init led to check errors
     gpio_init(PICO_DEFAULT_LED_PIN);
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
-    gpio_put(PICO_DEFAULT_LED_PIN, 1);
-    busy_wait_ms(1000); // TODO: Delete this
+    // gpio_put(PICO_DEFAULT_LED_PIN, 1);
+    // busy_wait_ms(1000); // TODO: Delete this
     gpio_put(PICO_DEFAULT_LED_PIN, 0);
     // <-
 
@@ -122,6 +122,8 @@ int main()
 
     uint8_t data[70];
 
+    uint32_t time = time_us_32();
+
     while (true)
     {
         if (response_ready)
@@ -133,7 +135,9 @@ int main()
             else
                 printf("Unknown command: %i\n", sat_decode.cmd_id);
         }
-        {
+        if(time_us_32() - time > 10000){
+            time = time_us_32();
+
             coil_enable(&coil1, coil_state[0]);
             coil_set_state(&coil1, pwm[0], coil_orientation[0]);
             coil_enable(&coil2, coil_state[1]);
@@ -141,7 +145,6 @@ int main()
             coil_enable(&coil3, coil_state[2]);
             coil_set_state(&coil3, pwm[2], coil_orientation[2]);
         }
-        sleep_ms(50);
     }
 }
 
