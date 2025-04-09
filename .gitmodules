@@ -1,3 +1,6 @@
 [submodule "sat_libs/mp92plus"]
 	path = sat_libs/mp92plus
 	url = https://github.com/Optimunn/mp92plus.git
+[submodule "sat_libs/mcp2515"]
+	path = sat_libs/mcp2515
+	url = https://github.com/adamczykpiotr/pico-mcp2515.git
