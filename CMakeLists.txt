@@ -7,10 +7,10 @@ include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 get_filename_component(BASE_FOLDER ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 set(PROJECT_NAME ${BASE_FOLDER})
 
-add_subdirectory(../sat_module/satframe ${CMAKE_BINARY_DIR}/satframe)
-add_subdirectory(../sat_module/mp92plus ${CMAKE_BINARY_DIR}/mp92plus)
-add_subdirectory(../sat_module/ecoil ${CMAKE_BINARY_DIR}/ecoil)
-add_subdirectory(../sat_module/ina3221 ${CMAKE_BINARY_DIR}/ina3221)
+add_subdirectory(sat_libs/satframe ${CMAKE_BINARY_DIR}/satframe)
+add_subdirectory(sat_libs/mp92plus ${CMAKE_BINARY_DIR}/mp92plus)
+add_subdirectory(sat_libs/ecoil ${CMAKE_BINARY_DIR}/ecoil)
+add_subdirectory(sat_libs/ina3221 ${CMAKE_BINARY_DIR}/ina3221)
 
 # Set name of project (as PROJECT_NAME) and C/C   standards
 project(${PROJECT_NAME} C CXX ASM)

@@ -1,0 +1,21 @@
+add_library(ina3221 INTERFACE)
+
+target_include_directories(ina3221
+  INTERFACE
+  ${CMAKE_CURRENT_LIST_DIR}/inc
+)
+
+target_link_libraries(ina3221
+  INTERFACE
+  pico_stdlib
+  hardware_i2c
+)
+
+target_sources(ina3221
+  INTERFACE
+  ${CMAKE_CURRENT_LIST_DIR}/ina3221.c
+  ${CMAKE_CURRENT_LIST_DIR}/inc/ina3221.h
+)
+
+
+
