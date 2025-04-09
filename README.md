@@ -2,8 +2,10 @@
 
 Orientation and stabilization module
 
+___
 It is intended for training. Development of technologies for the design and operation of ultra-small spacecraft.
 
+___
 How to build?
 
 Step 1: clone project
