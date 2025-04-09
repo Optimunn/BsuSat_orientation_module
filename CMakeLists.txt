@@ -22,7 +22,7 @@ pico_sdk_init()
 
 # Tell CMake where to find the executable source file
 add_executable(${PROJECT_NAME} 
-    main.cpp
+	main.cpp
 	func_plus.cpp
 )
 
@@ -31,8 +31,8 @@ pico_add_uf2_output(${PROJECT_NAME})
 
 # Link to pico_stdlib (gpio, time, etc. functions)
 target_link_libraries(${PROJECT_NAME} 
-    pico_stdlib
-    satframe
+	pico_stdlib
+	satframe
 	ecoil
 	mp92plus
 	ina3221
