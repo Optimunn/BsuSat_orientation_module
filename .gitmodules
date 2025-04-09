@@ -1,0 +1,3 @@
+[submodule "sat_libs/mp92plus"]
+	path = sat_libs/mp92plus
+	url = https://github.com/Optimunn/mp92plus.git
